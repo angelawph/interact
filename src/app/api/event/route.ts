@@ -25,7 +25,6 @@ export async function POST(request: NextRequest) {
 
     outcome = 3;
     message = 'success';
-
     var event_code = createRandomString(
         6,
         "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"

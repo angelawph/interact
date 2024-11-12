@@ -23,9 +23,7 @@ export default function NewEventForm() {
 		setOpen(false);
 	};
 
-	const submitData = async (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-
+	const submitData = async () => {
 		const endpoint = "/api/event";
 		try {
 			const response = await fetch(endpoint, {
@@ -53,7 +51,7 @@ export default function NewEventForm() {
 	};
 
 	return (
-		<Box component="form" onSubmit={submitData}>
+		<Box>
 			<Button
 				variant="contained"
 				color="primary"
@@ -96,7 +94,7 @@ export default function NewEventForm() {
 					/>
 				</DialogContent>
 				<DialogActions>
-					<Button type="submit" variant="contained">
+					<Button variant="contained" onClick={submitData}>
 						Create
 					</Button>
 					<Button onClick={handleClose}>Cancel</Button>
