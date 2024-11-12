@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server'
  * @param request 
  * @returns 
  */
-export async function PUT(request: NextRequest, { params }: { params: { eventid: string } }) {
+export async function PUT(request: Request, { params }: { params: { eventid: string } }) {
     const status: number = 200;
     let message: string = 'unprocessed';
     let outcome: number = 0; // 0: unprocessed, 1: no perms, 2: error, 3: normal completion
@@ -45,7 +45,7 @@ export async function PUT(request: NextRequest, { params }: { params: { eventid:
  * @param request 
  * @returns 
  */
-export async function PATCH(request: NextRequest, { params }: { params: { eventid: string } }) {
+export async function PATCH(request: Request, { params }: { params: { eventid: string } }) {
     const status: number = 200;
     let message: string = 'unprocessed';
     let outcome: number = 0; // 0: unprocessed, 1: no perms, 2: error, 3: normal completion
@@ -88,7 +88,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { eventi
  * @param request 
  * @returns 
  */
-export async function POST(request: NextRequest, { params }: { params: { eventid: string } }) {
+export async function POST(request: Request, { params }: { params: { eventid: string } }) {
     const status: number = 200;
     let message: string = 'unprocessed';
     let outcome: number = 0; // 0: unprocessed, 1: no perms, 2: error, 3: normal completion
