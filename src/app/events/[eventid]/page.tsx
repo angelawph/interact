@@ -59,9 +59,10 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const eventData = getEventDetails(params.eventid);
 	const [event] = await Promise.all([eventData]);
-
+	let event_title = event?.title;
+	
 	return {
-		title: event.title,
+		title: event_title,
 		description: "Engage, Empower, Evolve – Make Every Interaction Count!",
 	};
 }
@@ -97,7 +98,7 @@ export default async function Page({
 					py: 4,
 				}}>
 					<Typography variant="h4" color="inherit">
-						{event.title}
+						{event?.title}
 					</Typography>
 
 					<Questions event={event} questions={questions} params={params} />

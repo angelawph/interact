@@ -8,7 +8,7 @@ export default function QuestionForm({
 	event,
 	params,
 }: {
-	event: Event;
+	event: Event | null;
 	params: { locale: string; eventid: string };
 }) {
 	const router = useRouter();

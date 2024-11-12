@@ -7,9 +7,9 @@ export default function Questions({
 	questions,
 	params,
 }: {
-	event: Event;
+	event: Event | null;
 	questions: Question[];
-	params: { locale: string };
+	params: { locale: string, eventid: string };
 }) {
 	return (
 		<>

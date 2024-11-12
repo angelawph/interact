@@ -15,10 +15,10 @@ export default function SingleQuestion({
 	question,
 	params,
 }: {
-	event: Event;
+	event: Event | null;
 	questions: Question[];
 	question: Question;
-	params: { locale: string };
+	params: { locale: string, eventid: string };
 }) {
 	const [answered, setAnswered] = React.useState(question.answered);
 
@@ -91,7 +91,7 @@ export default function SingleQuestion({
 						<Checkbox
 							edge="end"
 							//onClick={(event) => setAnswered(event.target.checked)}
-							onClick={(event) => toggleAnswerStatus(event.target.checked)}
+							onClick={(event) => toggleAnswerStatus( (event.target as HTMLInputElement).checked)}
 							//onClick={toggleAnswerStatus}
 							checked={answered}
 						/>
